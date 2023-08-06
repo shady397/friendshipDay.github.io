@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+}
+
+span {
+    position: absolute;
+    background: url(heart.png);
+    background-size: cover;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: animate 2s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -1000%);
+        opacity: 0;
+        filter: hue-rotate(720deg);
+    }
+}
+
+/* Adding keyframes for text animation */
+@keyframes text-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) rotate(720deg);
+    filter: hue-rotate(720deg);
+  }
+}
+
+/* Applying animation to text element */
+#text {
+  /* Increasing the duration of the animation to 5 seconds */
+  animation: text-animation 5s ease-in-out infinite;
+}
